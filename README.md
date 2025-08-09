@@ -22,7 +22,7 @@ $$
 and
 
 $$
-\int_0^{2\pi} R_z(\phi)p(\phi)\,d\phi =\begin{pmatrix}\langle\cos\phi\rangle & -\langle\sin\phi\rangle & 
+\int_0^{2\pi} R_z(\phi)p(\phi) d\phi =\begin{pmatrix}\langle\cos\phi\rangle & -\langle\sin\phi\rangle & 
 0 \, \langle\sin\phi\rangle & \langle\cos\phi\rangle & 0 \, 
 0 & 0 & 1\end{pmatrix},
 $$
@@ -30,7 +30,7 @@ $$
 where
 
 $$
-\langle\cos\phi\rangle_i=\frac{\int_0^{2\pi}\cos\phi\,e^{-V_i(\phi)/k_BT} d\phi}{\int_0^{2\pi}e^{-V_i(\phi)/k_BT} d\phi},\quad\langle\sin\phi\rangle_i=\frac{\int_0^{2\pi}\sin\phi\,e^{-V_i(\phi)/k_BT} d\phi}{\int_0^{2\pi}e^{-V_i(\phi)/k_BT} d\phi}.
+\langle\cos\phi\rangle_i=\frac{\int_0^{2\pi}\cos\phi e^{-V_i(\phi)/k_BT} d\phi}{\int_0^{2\pi}e^{-V_i(\phi)/k_BT} d\phi},\quad\langle\sin\phi\rangle_i=\frac{\int_0^{2\pi}\sin\phi e^{-V_i(\phi)/k_BT} d\phi}{\int_0^{2\pi}e^{-V_i(\phi)/k_BT} d\phi}.
 $$
 
 Since each step is the action of a linear operator (with independent dihedral angles), the average transformation for n steps can be written as a product of operators:
@@ -69,3 +69,4 @@ $$
 *   Angle = np.deg2rad(np.array([-14.92, -10.83, 30.79, -30.79, 10.83, 14.92, -14.91, -13.29, -53.16, 53.16, 13.29, 14.91])) # convert degree to radian
 
 *   l[1] rotated by Angle[1]
+
