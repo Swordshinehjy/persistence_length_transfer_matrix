@@ -6,12 +6,14 @@ This repository is an update of [Persistence Length Using Monte Carlo Sampling](
 ## Transfer Matrix Method
 Statistical Averaging of Dihedral Angles — Single-Step Average Rotation Operator
 Dihedral angles are random (according to a known potential energy distribution), so for a given position i, we define the **single-step average rotation operator** as:
+
 $$
 A_i \equiv \langle Q_i(\phi)\rangle_{p_i} = \int_0^{2\pi} Q_i(\phi)\,p_i(\phi)\,d\phi,
 $$
+
 where $p\_i(\phi)=\dfrac{e^{-V\_i(\phi)/k\_B T}}{Z\_i}$，$Z\_i= \int_0^{2\pi}e^{-V\_i(\phi)/k\_B T}d\phi$.
 
-Since$R\_y(\theta\_i)$ is independent of $\phi$, the above equation can be written as:
+Since $R\_y(\theta\_i)$ is independent of $\phi$, the above equation can be written as:
 
 $$
 A_i = \bigg(\int_0^{2\pi} R_z(\phi)p_i(\phi)\,d\phi\bigg)\,R_y(\theta_i) \equiv S_i\,R_y(\theta_i),
@@ -20,32 +22,25 @@ $$
 and
 
 $$
-\int_0^{2\pi} R_z(\phi)p(\phi)\,d\phi
-=
-\begin{pmatrix}
-\langle\cos\phi\rangle & -\langle\sin\phi\rangle & 0\\[4pt]
-\langle\sin\phi\rangle & \langle\cos\phi\rangle & 0\\[4pt]
-0 & 0 & 1
-\end{pmatrix},
+\int_0^{2\pi} R_z(\phi)p(\phi)\,d\phi =\begin{pmatrix}\langle\cos\phi\rangle & -\langle\sin\phi\rangle & 0\\[4pt]\langle\sin\phi\rangle & \langle\cos\phi\rangle & 0\\[4pt]0 & 0 & 1\end{pmatrix},
 $$
 
 where
 
 $$
-\langle\cos\phi\rangle_i=\frac{\int_0^{2\pi}\cos\phi\,e^{-V_i(\phi)/k_BT}\,d\phi}{\int_0^{2\pi}e^{-V_i(\phi)/k_BT}\,d\phi},\quad
-\langle\sin\phi\rangle_i=\frac{\int_0^{2\pi}\sin\phi\,e^{-V_i(\phi)/k_BT}\,d\phi}{\int_0^{2\pi}e^{-V_i(\phi)/k_BT}\,d\phi}.
+\langle\cos\phi\rangle_i=\frac{\int_0^{2\pi}\cos\phi\,e^{-V_i(\phi)/k_BT}\,d\phi}{\int_0^{2\pi}e^{-V_i(\phi)/k_BT}\,d\phi},\quad\langle\sin\phi\rangle_i=\frac{\int_0^{2\pi}\sin\phi\,e^{-V_i(\phi)/k_BT}\,d\phi}{\int_0^{2\pi}e^{-V_i(\phi)/k_BT}\,d\phi}.
 $$
 
 Since each step is the action of a linear operator (with independent dihedral angles), the average transformation for n steps can be written as a product of operators:
 
 $$
-\langle \mathbf{t}_n\rangle\ = A_{n-1}A_{n-2}\cdots A_0 \,\mathbf{t}_0.
+\langle\mathbf{t}_n\rangle\= A_{n-1}A_{n-2}\cdots A_0 \,\mathbf{t}_0.
 $$
 
 the autocorrelation is:
 
 $$
-C(n)=\langle \mathbf{t}_n\cdot\mathbf{t}_0\rangle=\mathbf{t}_0^{T}\,\Big( \prod_{i=0}^{n-1} A_i \Big)\,\mathbf{t}_0,
+C(n)=\langle\mathbf{t}_n\cdot\mathbf{t}_0\rangle=\mathbf{t}_0^{T}\,\Big( \prod_{i=0}^{n-1} A_i \Big)\,\mathbf{t}_0,
 $$
 
 where $\prod_{i=0}^{n-1} A_i \equiv A_{n-1}\cdots A_0$.
@@ -53,15 +48,15 @@ where $\prod_{i=0}^{n-1} A_i \equiv A_{n-1}\cdots A_0$.
 If the chain is **periodic** (a repeating unit has M segments, where $A_{i+M}=A_i$), we shall calculate **the transfer matrix for one repeating unit**:
 
 
-  $$
-  \mathcal{M}=\prod_{i=0}^{M-1} A_i,
-  $$
+$$
+\mathcal{M}=\prod_{i=0}^{M-1} A_i,
+$$
 
 Then, the correlation for $r$ repeating units decays as $\mathcal{M}^r$. Let $\lambda_{\max}$ be the maximum eigenvalue (in modulus) of $\mathcal{M}$, then the persistence length in repeating units ($N_p$) is:
 
-  $$
-  \boxed{\mathcal{N}_p = -\frac{1}{\ln\lambda_{\max}}.}
-  $$
+$$
+\mathcal{N}_p = -\frac{1}{\ln\lambda_{\max}}.
+$$
 
 ## Definition of bond length and deflection angle in the script
 ![definition](definition.png)
