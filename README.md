@@ -68,6 +68,8 @@ $$
 *   1.432 is the bond length of first linker (l[1])
 *   Angle = np.deg2rad(np.array([-14.92, -10.83, 30.79, -30.79, 10.83, 14.92, -14.91, -13.29, -53.16, 53.16, 13.29, 14.91])) # convert degree to radian
 *   labels = {1: {'label': 'T-DPP', 'color': 'b'}, 2: {'label': 'T-T', 'color': 'm'}, 3: {'label': 'T-E', 'color': 'c'}}
+*   rotation = np.array([0, 1, 0, 1, 0, 2, 0, 3, 0, 3, 0, 2])
 *   l[1] rotated by rotation_type 1 with a deflection angle Angle[1]
+
 
 
