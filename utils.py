@@ -123,19 +123,21 @@ def compute_persistence_in_repeats(all_data, l_list, Angle_rad, rotation_types,
             # fixed conformation：phi = 0（m=1,s=0）
             m_i = 1.0
             s_i = 0.0
+        elif rot_id == -1: # phi=180
+            m_i, s_i = -1.0, 0.0
         else:
             fitf = all_data[rot_id]['fitf']
             # weight w(phi) = exp(-V(phi)/kT)
-            Z, _ = quad(lambda phi_deg: np.exp(-fitf(phi_deg) / kTval), 0, 360)
+            Z, _ = quad(lambda phi_deg: np.exp(-fitf(phi_deg) / kTval), 0, 360, limit=1000)
 
             # calculate <cos(phi)> and <sin(phi)> using quad
             m_i, _ = quad(
                 lambda phi_deg: np.cos(np.deg2rad(phi_deg)) * np.exp(-fitf(
-                    phi_deg) / kTval), 0, 360)
+                    phi_deg) / kTval), 0, 360, limit=1000)
             m_i /= Z
             s_i, _ = quad(
                 lambda phi_deg: np.sin(np.deg2rad(phi_deg)) * np.exp(-fitf(
-                    phi_deg) / kTval), 0, 360)
+                    phi_deg) / kTval), 0, 360, limit=1000)
             s_i /= Z
 
         # create S_i and R_y(theta) to obtain A_i = S_i @ R_y(theta)
