@@ -16,7 +16,7 @@ where $p\_i(\phi)=\dfrac{e^{-V\_i(\phi)/k_B T}}{Z_i}$, $Z_i=\int_0^{2\pi}e^{-V\_
 Since $R\_z(\theta\_i)$ is independent of $\phi$, the above equation can be written as:
 
 $$
-A_i = \bigg(\int_0^{2\pi} R_x(\phi)p_i(\phi)d\phi\bigg)R_z(\theta_i) \equiv S_i R_z(\theta_i),
+A_i = \bigg(\int_0^{2\pi} R_z(\theta_i)R_x(\phi)p_i(\phi)d\phi\bigg) \equiv R_z(\theta_i) S_i ,
 $$
 
 and
@@ -38,7 +38,7 @@ $$
 Since each step is the action of a linear operator (with independent dihedral angles), the average transformation for n steps can be written as a product of operators:
 
 $$
-\langle t_n\rangle\= A_{n-1}A_{n-2}\cdots A_0 t_0.
+\langle t_n \rangle =  A_0 \cdots A_{n-2}A_{n-1}t_0.
 $$
 
 the autocorrelation is:
@@ -48,7 +48,7 @@ C(n)=\langle t_n\cdot t_0\rangle
 =t_0^{T} \Big( \prod_{i=0}^{n-1} A_i \Big) t_0,
 $$
 
-where $\prod_{i=0}^{n-1} A_i \equiv A_{n-1}\cdots A_0$.
+where $\prod_{i=0}^{n-1} A_i \equiv A_0 \cdots A_{n-1}$.
 
 If the chain is **periodic** (a repeating unit has M segments, where $A_{i+M}=A_i$), we shall calculate **the transfer matrix for one repeating unit**:
 
@@ -74,6 +74,7 @@ $$
 *   l[1] rotated by rotation_type 1 with a deflection angle Angle[1]
 ### Update
 *   Add the rotational isomeric state (RIS) model and the mixed HR-RIS model using the same logic
+
 
 
 
