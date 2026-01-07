@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This repository is an update of [Persistence Length Using Monte Carlo Sampling](https://github.com/Swordshinehjy/DFT_persistence_length_Monte_Carlo_sampling). The original method uses the Monte Carlo sampling. However, it seems that the persistence length in repeating units ($N_p$) is irrelevant to the bond lengths. Here, I re-implemented the method using the transfer matrix method.
+This repository is an update of [Persistence Length Using Monte Carlo Sampling](https://github.com/Swordshinehjy/DFT_persistence_length_Monte_Carlo_sampling). The original method uses the Monte Carlo sampling. However, it seems that the correlation length ($N_p$) is irrelevant to the bond lengths. Here, I re-implemented the method using the transfer matrix method.
 ## Transfer Matrix Method
 Statistical Averaging of Dihedral Angles — Single-Step Average Rotation Operator
 Dihedral angles are random (according to a known potential energy distribution), so for a given position i, we define the **single-step average rotation operator** as:

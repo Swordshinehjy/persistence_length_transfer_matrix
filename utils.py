@@ -99,10 +99,10 @@ def format_subplot(xlabel, ylabel, title):
     plt.title(title, fontsize=18, fontfamily="Helvetica")
 
 
-def compute_persistence_in_repeats(all_data, l_list, Angle_rad, rotation_types,
+def compute_correlation(all_data, l_list, Angle_rad, rotation_types,
                                    kTval):
     """
-    Calculates the persistence length in repeat units
+    Calculates the correlation length
 
     Parameters:
     all_data: dict, the all_data you constructed previously (including fitf)
@@ -111,7 +111,7 @@ def compute_persistence_in_repeats(all_data, l_list, Angle_rad, rotation_types,
     rotation_types: array, the rotation id corresponding to each segment in the primitive (0 means no rotation)
 
     Returns:
-    (lp_in_repeats, lambda_max, Mmat)
+    (corr_length, lambda_max, Mmat)
     """
     M = len(l_list)
     # L_rep = float(np.sum(l_list))
@@ -165,7 +165,7 @@ def compute_persistence_in_repeats(all_data, l_list, Angle_rad, rotation_types,
         lambda_max = min(lambda_max, 1.0 - eps)
 
     # persistence length measured in number of repeat units:
-    lp_in_repeats = -1.0 / np.log(lambda_max)
+    corr_length = -1.0 / np.log(lambda_max)
     # persistence length in physical length (same units as l_list)
-    # lp_in_length = lp_in_repeats * L_rep
-    return lp_in_repeats, lambda_max
+    # lp_in_length = corr_length * L_rep
+    return corr_length, lambda_max
